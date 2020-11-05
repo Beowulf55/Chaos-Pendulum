@@ -7,11 +7,11 @@ import formular
 
 os.environ['SDL_VIDEO_CENTERED']='1'
 
-width, height = 1920, 1080
+width, height = 800, 600
 SIZE = (width, height)
 pygame.init()
-pygame.display.set_caption("Double Pendulum")
-fps = 30
+pygame.display.set_caption("Chaos Pendulum")
+fps = 60
 screen = pygame.display.set_mode(SIZE)
 clock = pygame.time.Clock()
 
@@ -19,8 +19,8 @@ clock = pygame.time.Clock()
 white = (255, 255 , 255)
 black = (0, 0, 0)
 
-mass1 = 40
-mass2 = 40
+mass1 = 50
+mass2 = 85
 length1 = 200
 length2 = 200
 
@@ -54,11 +54,11 @@ while run:
     angle_acceleration1 = formular.FirstAcceleration(angle1, angle2, mass1, mass2, length1, length2, Gravity, angle_velocity1, angle_velocity2)
     angle_acceleration2 = formular.SecondAcceleration(angle1, angle2, mass1, mass2, length1, length2, Gravity, angle_velocity1, angle_velocity2)
 
-    x1 = float(length1 * math.sin(angle1)+x_offset)
-    y1 = float(length1 * math.cos(angle1)+y_offset)
+    x1 = float((length1 / 2) * math.sin(angle1)+x_offset)
+    y1 = float((length1 / 2) * math.cos(angle1)+y_offset)
 
-    x2 = float(x1 + length2 * math.sin(angle2))
-    y2 = float(y1 + length2 * math.cos(angle2))
+    x2 = float(x1 + length2 * math.sin(angle2) / 2)
+    y2 = float(y1 + length2 * math.cos(angle2) / 2)
 
     # the angle varies with respect to the velocity and the velocity with respect to the acceleration
     angle_velocity1 += angle_acceleration1
