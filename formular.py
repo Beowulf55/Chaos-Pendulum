@@ -20,7 +20,7 @@ def FirstAcceleration(θ1, θ2, m1, m2, L1, L2, g, ω1, ω2):
 
 def SecondAcceleration(θ1, θ2, m1, m2, L1, L2, g, ω1, ω2):
     numerator1 = 2 * math.sin(θ1 - θ2)
-    numerator2 = (ω1 * ω1) * L1 * (m1 + m2) + g * (m1+ m2) * math.cos(θ1)
+    numerator2 = (ω1 * ω1) * L1 * (m1 + m2) + g * (m1 + m2) * math.cos(θ1)
     numerator3 = (ω2 * ω2) * L2 * m2 * math.cos(θ1-θ2)
 
     numerator = numerator1 * (numerator2 + numerator3)
