@@ -1,7 +1,7 @@
 import pygame
 
 class Points:
-    def __init__(self, x, y, surface,colors,coordinates):
+    def __init__(self, x, y, surface, colors, coordinates):
         self.x = x
         self.y = y
         self.surface = surface
