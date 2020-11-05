@@ -20,7 +20,7 @@ white = (255, 255 , 255)
 black = (0, 0, 0)
 
 mass1 = 50
-mass2 = 85
+mass2 = 65
 length1 = 200
 length2 = 200
 
