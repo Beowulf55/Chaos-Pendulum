@@ -7,22 +7,10 @@ import formular
 
 os.environ['SDL_VIDEO_CENTERED']='1'
 
-width, height = 1024, 768
-SIZE = (width, height)
-pygame.init()
-pygame.display.set_caption("Chaos Pendulum")
-fps = 30
-screen = pygame.display.set_mode(SIZE)
-clock = pygame.time.Clock()
-
-#colors
-white = (255, 255 , 255)
-black = (0, 0, 0)
-
 mass1 = 40
 mass2 = 40
-length1 = 200
-length2 = 200
+length1 = 175
+length2 = 175
 
 angle1 = math.pi/2
 angle2 = math.pi/2
@@ -30,10 +18,27 @@ angle_velocity1 = 0
 angle_velocity2 = 0
 angle_acceleration1 = 0
 angle_acceleration2 = 0
-Gravity = 5 # system typically doesn't handle realistic gravity well—pendulum became unrealistically unstable and .exe crashes
+Gravity = 4 # system typically doesn't handle realistic gravity well; pendulum becomes unrealistically chaotic and .exe crashes
 scatter1 = []
 scatter2 = []
 
+lblm1 = str(mass1)
+lblm2 = str(mass2)
+lblL1 = str(length1)
+lblL2 = str(length2)
+lblg = str(Gravity / 9.8)
+
+width, height = 1280, 720
+SIZE = (width, height)
+pygame.init()
+pygame.display.set_caption("Chaos Pendulum, mass1 = " + lblm1 + ", mass2 = " + lblm2 + ", length1 = " + lblL1 + ", length2 = " + lblL2 + ", Gravity = " + lblg + "g")
+fps = 30
+screen = pygame.display.set_mode(SIZE)
+clock = pygame.time.Clock()
+
+#colors
+white = (255, 255 , 255)
+black = (0, 0, 0)
 
 starting_point = (int(width/2) , int(height/4) + 100)
 
@@ -77,9 +82,8 @@ while run:
 
     pygame.draw.line(screen, white, starting_point, (x1, y1), 6)
 
-
     pygame.draw.line(screen, white, (x1, y1), (x2, y2), 1)
-    pygame.draw.circle(screen, white, (int(x2), int(y2)), 15)
+    pygame.draw.circle(screen, (0, 128.01, 128.01), (int(x2), int(y2)), 15)
     pygame.draw.circle(screen, (20, 200, 30), (int(x1), int(y1)), 15)
     if len(scatter1) > 1:
         pygame.draw.lines(screen, (100, 50, 100), False, scatter1, 1)
