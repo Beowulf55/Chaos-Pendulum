@@ -19,8 +19,8 @@ clock = pygame.time.Clock()
 white = (255, 255 , 255)
 black = (0, 0, 0)
 
-mass1 = 50
-mass2 = 50
+mass1 = 40
+mass2 = 40
 length1 = 200
 length2 = 200
 
@@ -30,12 +30,12 @@ angle_velocity1 = 0
 angle_velocity2 = 0
 angle_acceleration1 = 0
 angle_acceleration2 = 0
-Gravity = 3
+Gravity = 5 # system typically doesn't handle realistic gravity well—pendulum became unrealistically unstable and .exe crashes
 scatter1 = []
 scatter2 = []
 
 
-starting_point = (int(width/2) , int(height/4))
+starting_point = (int(width/2) , int(height/4) + 100)
 
 x_offset = starting_point[0]
 y_offset = starting_point[1]
