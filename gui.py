@@ -1,4 +1,6 @@
-import pygame, sys
+import pygame
+import sys
+import os
 
 mainClock = pygame.time.Clock()
 from pygame.locals import *
@@ -28,13 +30,14 @@ def main_menu():
             button_2 = pygame.Rect(50, 200, 200, 50)
             if button_1.collidepoint((mx, my)):
                 if click:
-                    game()
+                    launch(main.py)
             if button_2.collidepoint((mx, my)):
                 if click:
                     options()
             pygame.draw.rect(screen, (255, 0, 0), button_1)
             pygame.draw.rect(screen, (255, 0, 0), button_2)
-
+            draw_text('RUN', font, (255, 255, 255), screen, 51, 101)
+            draw_text('OPTIONS', font, (255, 255, 255), screen, 51, 201)
             click = False
             for event in pygame.event.get():
                 if event.type == QUIT:
