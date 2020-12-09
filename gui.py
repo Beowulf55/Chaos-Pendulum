@@ -24,8 +24,7 @@ def main_menu():
 
             mx, my = pygame.mouse.get_pos()
 
-            button_1 = pygame.Rect(50, 100, 200, 50, label = 'Run')
-            #draw_text('Run', font, (255, 255, 255), button_1, 5, 5)
+            button_1 = pygame.Rect(50, 100, 200, 50)
             button_2 = pygame.Rect(50, 200, 200, 50)
             if button_1.collidepoint((mx, my)):
                 if click:
