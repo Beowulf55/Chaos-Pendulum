@@ -5,11 +5,11 @@ factors still being explored, the parameters of each pendulum as well as tending
 display much greater system instability and sensitivity to intitial conditions than we would expect in 
 the physical world. With that disclaimer and considerations taken, it does behave how one would expect.
 
-#Python Dependencies
+# Python Dependencies
 Python 3.8.5
 pygame 2.0.0
 
-#Downloading & Running
+# Downloading & Running
 Download main, formular, and points. For now, gui isn't necessary, but it is a very early development of a 
 GUI being designed to run the chaos pendulum suite from a graphical interface.
 
