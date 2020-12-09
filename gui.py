@@ -30,7 +30,7 @@ def main_menu():
             button_2 = pygame.Rect(50, 200, 200, 50)
             if button_1.collidepoint((mx, my)):
                 if click:
-                    launch(main.py)
+                    import main
             if button_2.collidepoint((mx, my)):
                 if click:
                     options()
